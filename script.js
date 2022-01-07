@@ -32,10 +32,10 @@ $("#btn-add").click(
 
 $("#btn-search").click(
     function(){
-        let searchInput = $("#search-message").val();
+        let searchInput = $("#search-message").val().toLowerCase();
         $("h6").each(
             function(){
-                if (searchInput != $(this).text()) {
+                if ($(this).text().toLowerCase().includes(searchInput) === false) {
                     $(this).parent().parent().fadeOut(600);
                 } else {
                     $(this).parent().parent().fadeIn(600);
